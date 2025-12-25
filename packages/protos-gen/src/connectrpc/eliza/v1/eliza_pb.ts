@@ -2,21 +2,33 @@
 // @generated from file connectrpc/eliza/v1/eliza.proto (package connectrpc.eliza.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
-import { file_buf_validate_validate } from "../../../buf/validate/validate_pb";
-import type { Message } from "@bufbuild/protobuf";
+import type {
+  GenFile,
+  GenMessage,
+  GenService,
+} from '@bufbuild/protobuf/codegenv2';
+import {
+  fileDesc,
+  messageDesc,
+  serviceDesc,
+} from '@bufbuild/protobuf/codegenv2';
+import { file_buf_validate_validate } from '../../../buf/validate/validate_pb.ts';
+import type { Message } from '@bufbuild/protobuf';
 
 /**
  * Describes the file connectrpc/eliza/v1/eliza.proto.
  */
-export const file_connectrpc_eliza_v1_eliza: GenFile = /*@__PURE__*/
-  fileDesc("Ch9jb25uZWN0cnBjL2VsaXphL3YxL2VsaXphLnByb3RvEhNjb25uZWN0cnBjLmVsaXphLnYxIioKClNheVJlcXVlc3QSHAoIc2VudGVuY2UYASABKAlCCrpIB3IFEAEY+gEiHwoLU2F5UmVzcG9uc2USEAoIc2VudGVuY2UYASABKAkyWgoMRWxpemFTZXJ2aWNlEkoKA1NheRIfLmNvbm5lY3RycGMuZWxpemEudjEuU2F5UmVxdWVzdBogLmNvbm5lY3RycGMuZWxpemEudjEuU2F5UmVzcG9uc2UiAGIGcHJvdG8z", [file_buf_validate_validate]);
+export const file_connectrpc_eliza_v1_eliza: GenFile =
+  /*@__PURE__*/
+  fileDesc(
+    'Ch9jb25uZWN0cnBjL2VsaXphL3YxL2VsaXphLnByb3RvEhNjb25uZWN0cnBjLmVsaXphLnYxIioKClNheVJlcXVlc3QSHAoIc2VudGVuY2UYASABKAlCCrpIB3IFEAEY+gEiHwoLU2F5UmVzcG9uc2USEAoIc2VudGVuY2UYASABKAkyWgoMRWxpemFTZXJ2aWNlEkoKA1NheRIfLmNvbm5lY3RycGMuZWxpemEudjEuU2F5UmVxdWVzdBogLmNvbm5lY3RycGMuZWxpemEudjEuU2F5UmVzcG9uc2UiAGIGcHJvdG8z',
+    [file_buf_validate_validate]
+  );
 
 /**
  * @generated from message connectrpc.eliza.v1.SayRequest
  */
-export type SayRequest = Message<"connectrpc.eliza.v1.SayRequest"> & {
+export type SayRequest = Message<'connectrpc.eliza.v1.SayRequest'> & {
   /**
    * @generated from field: string sentence = 1;
    */
@@ -27,13 +39,14 @@ export type SayRequest = Message<"connectrpc.eliza.v1.SayRequest"> & {
  * Describes the message connectrpc.eliza.v1.SayRequest.
  * Use `create(SayRequestSchema)` to create a new message.
  */
-export const SayRequestSchema: GenMessage<SayRequest> = /*@__PURE__*/
+export const SayRequestSchema: GenMessage<SayRequest> =
+  /*@__PURE__*/
   messageDesc(file_connectrpc_eliza_v1_eliza, 0);
 
 /**
  * @generated from message connectrpc.eliza.v1.SayResponse
  */
-export type SayResponse = Message<"connectrpc.eliza.v1.SayResponse"> & {
+export type SayResponse = Message<'connectrpc.eliza.v1.SayResponse'> & {
   /**
    * @generated from field: string sentence = 1;
    */
@@ -44,7 +57,8 @@ export type SayResponse = Message<"connectrpc.eliza.v1.SayResponse"> & {
  * Describes the message connectrpc.eliza.v1.SayResponse.
  * Use `create(SayResponseSchema)` to create a new message.
  */
-export const SayResponseSchema: GenMessage<SayResponse> = /*@__PURE__*/
+export const SayResponseSchema: GenMessage<SayResponse> =
+  /*@__PURE__*/
   messageDesc(file_connectrpc_eliza_v1_eliza, 1);
 
 /**
@@ -55,10 +69,8 @@ export const ElizaService: GenService<{
    * @generated from rpc connectrpc.eliza.v1.ElizaService.Say
    */
   say: {
-    methodKind: "unary";
+    methodKind: 'unary';
     input: typeof SayRequestSchema;
     output: typeof SayResponseSchema;
-  },
-}> = /*@__PURE__*/
-  serviceDesc(file_connectrpc_eliza_v1_eliza, 0);
-
+  };
+}> = /*@__PURE__*/ serviceDesc(file_connectrpc_eliza_v1_eliza, 0);
