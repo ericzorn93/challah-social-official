@@ -4,6 +4,10 @@ package connectrpc.eliza.v1;
 
 import "buf/validate/validate.proto";
 
+service ElizaService {
+  rpc Say(SayRequest) returns (SayResponse) {}
+}
+
 message SayRequest {
   string sentence = 1 [
     (buf.validate.field).string.min_len = 1,
@@ -13,8 +17,4 @@ message SayRequest {
 
 message SayResponse {
   string sentence = 1;
-}
-
-service ElizaService {
-  rpc Say(SayRequest) returns (SayResponse) {}
 }
