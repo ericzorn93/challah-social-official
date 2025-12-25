@@ -1,7 +1,7 @@
 version: v2
 plugins:
   - local: protoc-gen-es
-    out: packages/gen
+    out: packages/protos-gen/src
     # Also generate any imported dependencies
     include_imports: true
     opt: target=ts

@@ -1,0 +1,9 @@
+{
+  "name": "challah-social-protos-gen",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/protos-gen/src",
+  "projectType": "library",
+  "tags": ["protos"],
+  "// targets": "to see all targets run: nx show project challah-social-protos-gen --web",
+  "targets": {}
+}

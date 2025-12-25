@@ -8,6 +8,9 @@
     },
     {
       "path": "./apps/my-nest-app"
+    },
+    {
+      "path": "./packages/protos-gen"
     }
   ]
 }
