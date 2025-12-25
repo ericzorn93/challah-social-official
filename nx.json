@@ -52,7 +52,7 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/my-nest-app-e2e/**/*"]
+      "exclude": ["apps/auth-api-e2e/**/*"]
     },
     {
       "plugin": "@nx/js/typescript",

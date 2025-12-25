@@ -4,9 +4,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug @org/my-nest-app with Nx",
+      "name": "Debug @challah-social/auth-api with Nx",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["nx", "serve", "@org/my-nest-app"],
+      "runtimeArgs": ["nx", "serve", "@challah-social/auth-api"],
       "env": {
         "NODE_OPTIONS": "--inspect=9229"
       },
@@ -15,7 +15,7 @@
       "skipFiles": ["<node_internals>/**"],
       "sourceMaps": true,
       "outFiles": [
-        "${workspaceFolder}/apps/my-nest-app/dist/**/*.(m|c|)js",
+        "${workspaceFolder}/apps/auth-api/dist/**/*.(m|c|)js",
         "!**/node_modules/**"
       ]
     }

@@ -4,13 +4,13 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/my-nest-app-e2e"
-    },
-    {
-      "path": "./apps/my-nest-app"
-    },
-    {
       "path": "./packages/protos-gen"
+    },
+    {
+      "path": "./apps/auth-api-e2e"
+    },
+    {
+      "path": "./apps/auth-api"
     }
   ]
 }
