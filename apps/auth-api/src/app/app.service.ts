@@ -10,8 +10,7 @@ import {
 export class AppService implements ServiceImpl<typeof ElizaService> {
   private readonly logger = new Logger(AppService.name);
 
-  // @ts-expect-error: Implementing interface method
-  public async say(req: SayRequest): Promise<SayResponse> {
+  public async say(_req: SayRequest): Promise<SayResponse> {
     this.logger.log('Received Say request');
 
     return {
