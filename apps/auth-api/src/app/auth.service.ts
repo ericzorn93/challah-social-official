@@ -5,8 +5,8 @@ import { authv1 } from '@challah-social/protos-gen';
 import { RandomService } from './random.service';
 
 @Injectable()
-export class AppService implements ServiceImpl<typeof authv1.AuthService> {
-  private readonly logger = new Logger(AppService.name);
+export class AuthService implements ServiceImpl<typeof authv1.AuthService> {
+  private readonly logger = new Logger(AuthService.name);
 
   constructor(private readonly randomService: RandomService) {}
 

@@ -3,12 +3,12 @@ import { ConnectRouter } from '@connectrpc/connect';
 
 import { authv1 } from '@challah-social/protos-gen';
 
-import { AppService } from './app/app.service';
+import { AuthService } from './app/auth.service';
 
 export default (app: INestApplication): ((router: ConnectRouter) => void) => {
-  const appService = app.get<AppService>(AppService);
+  const authService = app.get<AuthService>(AuthService);
 
   return (router: ConnectRouter) => {
-    router.service(authv1.AuthService, appService as any);
+    router.service(authv1.AuthService, authService as any);
   };
 };
