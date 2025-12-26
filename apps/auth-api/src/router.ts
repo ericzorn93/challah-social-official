@@ -1,15 +1,11 @@
-import { INestApplication } from '@nestjs/common';
 import { ConnectRouter } from '@connectrpc/connect';
 
+import { type NestConnectRPCRouterFunction } from '@challah-social/nest-utils';
 import { authv1 } from '@challah-social/protos-gen';
 
 import { AuthRPC } from './app/auth/auth.rpc';
 
-type ConnectRouterFunction = (
-  app: INestApplication
-) => (router: ConnectRouter) => void;
-
-const routerFunction: ConnectRouterFunction = (app) => {
+const routerFunction: NestConnectRPCRouterFunction = (app) => {
   const authRPC = app.get<AuthRPC>(AuthRPC);
 
   return (router: ConnectRouter) => {

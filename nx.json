@@ -28,7 +28,7 @@
           "watchDepsName": "watch-deps"
         }
       },
-      "exclude": ["packages/protos-gen/*"]
+      "exclude": ["packages/protos-gen/*", "packages/nest-utils/*"]
     },
     {
       "plugin": "@nx/webpack/plugin",
@@ -56,7 +56,7 @@
     },
     {
       "plugin": "@nx/js/typescript",
-      "include": ["packages/protos-gen/*"],
+      "include": ["packages/protos-gen/*", "packages/nest-utils/*"],
       "options": {
         "typecheck": {
           "targetName": "typecheck"

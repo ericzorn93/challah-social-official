@@ -11,6 +11,9 @@
     },
     {
       "path": "./apps/auth-api"
+    },
+    {
+      "path": "./packages/nest-utils"
     }
   ]
 }

@@ -1,0 +1,9 @@
+{
+  "name": "challah-social-nest-utils",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nest-utils/src",
+  "projectType": "library",
+  "tags": ["backend", "nest"],
+  "// targets": "to see all targets run: nx show project challah-social-nest-utils --web",
+  "targets": {}
+}
