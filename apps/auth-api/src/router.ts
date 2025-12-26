@@ -9,6 +9,6 @@ export default (app: INestApplication): ((router: ConnectRouter) => void) => {
   const appService = app.get<AppService>(AppService);
 
   return (router: ConnectRouter) => {
-    router.service(authv1.AuthService, appService);
+    router.service(authv1.AuthService, appService as any);
   };
 };

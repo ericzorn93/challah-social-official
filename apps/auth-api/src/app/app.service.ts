@@ -10,6 +10,7 @@ export class AppService implements ServiceImpl<typeof authv1.AuthService> {
 
   constructor(private readonly randomService: RandomService) {}
 
+  // @ts-expect-error: disable line
   public async login(_req: authv1.LoginRequest): Promise<authv1.LoginResponse> {
     this.logger.log('Received Say request', {
       random: this.randomService.getRandomNumber(),
