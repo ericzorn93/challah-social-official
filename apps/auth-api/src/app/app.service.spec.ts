@@ -14,13 +14,15 @@ describe('AppService', () => {
 
   describe('say', () => {
     it('should return "Hello API"', () => {
-      const greeting = service.say({
-        sentence: 'Hello API',
-        $typeName: 'connectrpc.eliza.v1.SayRequest',
+      const greeting = service.login({
+        username: 'testuser',
+        password: 'password123',
+        confirmPassword: 'password123',
+        $typeName: 'auth.v1.LoginRequest',
       });
 
       expect(greeting).toEqual({
-        sentence: 'Hello API',
+        token: expect.any(String),
       });
     });
   });
