@@ -5,15 +5,16 @@ import { authv1 } from '@challah-social/protos-gen';
 import { RandomService } from './random.service';
 
 @Injectable()
-export class AuthService implements ServiceImpl<typeof authv1.AuthService> {
-  private readonly logger = new Logger(AuthService.name);
+export class AuthRPC implements ServiceImpl<typeof authv1.AuthService> {
+  private readonly logger = new Logger(AuthRPC.name);
 
   constructor(private readonly randomService: RandomService) {}
 
-  // @ts-expect-error: disable line
-  public async login(_req: authv1.LoginRequest): Promise<authv1.LoginResponse> {
+  // @ts-expect-error Implemented the interface method
+  public async login(req: authv1.LoginRequest): Promise<authv1.LoginResponse> {
     this.logger.log('Received Say request', {
       random: this.randomService.getRandomNumber(),
+      username: req.username,
     });
 
     return {
