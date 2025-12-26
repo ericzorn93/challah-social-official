@@ -8,6 +8,7 @@ import { NestFactory } from '@nestjs/core';
 import { expressConnectMiddleware } from '@connectrpc/connect-express';
 import { createValidateInterceptor } from '@connectrpc/validate';
 import { createServer } from 'node:http';
+import { createServer as createServer2 } from 'node:http2';
 
 import routes from './router';
 import { AppModule } from './app/app.module';
