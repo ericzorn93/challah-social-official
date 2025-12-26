@@ -1,6 +1,6 @@
 import { ConnectRouter } from '@connectrpc/connect';
 
-import { ElizaService } from '@challah-social/protos-gen';
+import { elizav1 } from '@challah-social/protos-gen';
 
 import { AppService } from './app/app.service';
 import { INestApplication } from '@nestjs/common';
@@ -11,6 +11,6 @@ export default (
   const appService = app.get<AppService>(AppService);
 
   return (router: ConnectRouter) => {
-    router.service(ElizaService, appService as any);
+    router.service(elizav1.ElizaService, appService);
   };
 };

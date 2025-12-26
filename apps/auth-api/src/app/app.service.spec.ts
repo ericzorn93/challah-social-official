@@ -12,9 +12,16 @@ describe('AppService', () => {
     service = app.get<AppService>(AppService);
   });
 
-  describe('getData', () => {
+  describe('say', () => {
     it('should return "Hello API"', () => {
-      expect(service.getData()).toEqual({ message: 'Hello API' });
+      const greeting = service.say({
+        sentence: 'Hello API',
+        $typeName: 'connectrpc.eliza.v1.SayRequest',
+      });
+
+      expect(greeting).toEqual({
+        sentence: 'Hello API',
+      });
     });
   });
 });

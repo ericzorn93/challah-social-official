@@ -11,7 +11,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file connectrpc/eliza/v1/eliza.proto.
  */
 export const file_connectrpc_eliza_v1_eliza: GenFile = /*@__PURE__*/
-  fileDesc("Ch9jb25uZWN0cnBjL2VsaXphL3YxL2VsaXphLnByb3RvEhNjb25uZWN0cnBjLmVsaXphLnYxIioKClNheVJlcXVlc3QSHAoIc2VudGVuY2UYASABKAlCCrpIB3IFEAEY+gEiHwoLU2F5UmVzcG9uc2USEAoIc2VudGVuY2UYASABKAkyWgoMRWxpemFTZXJ2aWNlEkoKA1NheRIfLmNvbm5lY3RycGMuZWxpemEudjEuU2F5UmVxdWVzdBogLmNvbm5lY3RycGMuZWxpemEudjEuU2F5UmVzcG9uc2UiAGIGcHJvdG8z", [file_buf_validate_validate]);
+  fileDesc("Ch9jb25uZWN0cnBjL2VsaXphL3YxL2VsaXphLnByb3RvEhNjb25uZWN0cnBjLmVsaXphLnYxIioKClNheVJlcXVlc3QSHAoIc2VudGVuY2UYASABKAlCCrpIB3IFEAIY+gEiHwoLU2F5UmVzcG9uc2USEAoIc2VudGVuY2UYASABKAkyWgoMRWxpemFTZXJ2aWNlEkoKA1NheRIfLmNvbm5lY3RycGMuZWxpemEudjEuU2F5UmVxdWVzdBogLmNvbm5lY3RycGMuZWxpemEudjEuU2F5UmVzcG9uc2UiAGIGcHJvdG8z", [file_buf_validate_validate]);
 
 /**
  * @generated from message connectrpc.eliza.v1.SayRequest
