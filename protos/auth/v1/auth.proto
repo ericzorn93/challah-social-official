@@ -6,6 +6,7 @@ import "buf/validate/validate.proto";
 
 
 service AuthService {
+  // Login allows a user to log in with their credentials.
   rpc Login(LoginRequest) returns (LoginResponse) {}
 }
 

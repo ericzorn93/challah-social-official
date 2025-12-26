@@ -66,6 +66,8 @@ export const LoginResponseSchema: GenMessage<LoginResponse, {validType: LoginRes
  */
 export const AuthService: GenService<{
   /**
+   * Login allows a user to log in with their credentials.
+   *
    * @generated from rpc auth.v1.AuthService.Login
    */
   login: {
