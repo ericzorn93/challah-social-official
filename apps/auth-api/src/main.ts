@@ -19,7 +19,7 @@ async function bootstrap() {
     expressConnectMiddleware({
       // Validation via Protovalidate is almost always recommended
       interceptors: [createValidateInterceptor()],
-      routes: routes(app),
+      routes: routes(app as any),
     })
   );
 
