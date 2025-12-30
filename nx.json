@@ -51,8 +51,7 @@
       "plugin": "@nx/jest/plugin",
       "options": {
         "targetName": "test"
-      },
-      "exclude": ["apps/auth-api-e2e/**/*"]
+      }
     },
     {
       "plugin": "@nx/js/typescript",
