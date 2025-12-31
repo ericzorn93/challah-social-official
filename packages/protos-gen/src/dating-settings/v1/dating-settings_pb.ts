@@ -13,6 +13,8 @@ export const file_dating_settings_v1_dating_settings: GenFile = /*@__PURE__*/
   fileDesc("CihkYXRpbmctc2V0dGluZ3MvdjEvZGF0aW5nLXNldHRpbmdzLnByb3RvEhFkYXRpbmdzZXR0aW5ncy52MSIUChJQbGFjZWhvbGRlclJlcXVlc3QiJgoTUGxhY2Vob2xkZXJSZXNwb25zZRIPCgdtZXNzYWdlGAEgASgJMnUKFURhdGluZ1NldHRpbmdzU2VydmljZRJcCgtQbGFjZWhvbGRlchIlLmRhdGluZ3NldHRpbmdzLnYxLlBsYWNlaG9sZGVyUmVxdWVzdBomLmRhdGluZ3NldHRpbmdzLnYxLlBsYWNlaG9sZGVyUmVzcG9uc2ViBnByb3RvMw");
 
 /**
+ * Placeholder request message.
+ *
  * @generated from message datingsettings.v1.PlaceholderRequest
  */
 export type PlaceholderRequest = Message<"datingsettings.v1.PlaceholderRequest"> & {
@@ -28,10 +30,14 @@ export const PlaceholderRequestSchema: GenMessage<PlaceholderRequest, {validType
   messageDesc(file_dating_settings_v1_dating_settings, 0);
 
 /**
+ * Placeholder response message.
+ *
  * @generated from message datingsettings.v1.PlaceholderResponse
  */
 export type PlaceholderResponse = Message<"datingsettings.v1.PlaceholderResponse"> & {
   /**
+   * A simple message field.
+   *
    * @generated from field: string message = 1;
    */
   message: string;
@@ -51,6 +57,8 @@ export const PlaceholderResponseSchema: GenMessage<PlaceholderResponse, {validTy
  */
 export const DatingSettingsService: GenService<{
   /**
+   * Placeholder RPC method that does not perform any real operation.
+   *
    * @generated from rpc datingsettings.v1.DatingSettingsService.Placeholder
    */
   placeholder: {

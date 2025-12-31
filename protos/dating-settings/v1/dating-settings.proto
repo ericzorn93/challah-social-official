@@ -3,11 +3,15 @@ syntax = "proto3";
 package datingsettings.v1;
 
 service DatingSettingsService {
+  // Placeholder RPC method that does not perform any real operation.
   rpc Placeholder (PlaceholderRequest) returns (PlaceholderResponse);
 }
 
+// Placeholder request message.
 message PlaceholderRequest {}
 
+// Placeholder response message.
 message PlaceholderResponse {
+  // A simple message field.
   string message = 1;
 }
