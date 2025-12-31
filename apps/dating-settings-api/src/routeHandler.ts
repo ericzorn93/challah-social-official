@@ -8,12 +8,14 @@ const routerHandler: NestConnectRPCRouterFunction = (app) => {
   const datingSettingsV1Rpc = app.get(DatingSettingsV1RPC);
 
   return (router) => {
+    // Dating Settings V1 RPC routes
     router.service(
       datingSettingsv1.DatingSettingsService,
       datingSettingsV1Rpc as any
     );
+    Logger.log('Registered Dating Settings V1 RPC routes', routerHandler.name);
 
-    Logger.log('All RPC routes registered', 'RouterHandler');
+    Logger.log('All RPC routes registered', routerHandler.name);
   };
 };
 
