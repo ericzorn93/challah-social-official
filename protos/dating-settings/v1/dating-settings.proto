@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package datingsettings.v1;
+
+service DatingSettingsService {
+  rpc Placeholder (PlaceholderRequest) returns (PlaceholderResponse);
+}
+
+message PlaceholderRequest {}
+
+message PlaceholderResponse {
+  string message = 1;
+}

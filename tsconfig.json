@@ -8,6 +8,12 @@
     },
     {
       "path": "./packages/nest-utils"
+    },
+    {
+      "path": "./apps/dating-settings-api-e2e"
+    },
+    {
+      "path": "./apps/dating-settings-api"
     }
   ]
 }

@@ -1,0 +1,23 @@
+{
+  "name": "@challah-social/dating-settings-api",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@challah-social/nest-utils": "workspace:*",
+    "@challah-social/protos-gen": "workspace:*",
+    "@connectrpc/connect": "^2.1.1",
+    "@connectrpc/connect-express": "^2.1.1",
+    "@connectrpc/connect-node": "^2.1.1",
+    "@connectrpc/validate": "^0.2.0",
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/platform-express": "^11.0.0",
+    "connect": "3.7.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^11.0.0"
+  }
+}
