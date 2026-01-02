@@ -13,11 +13,11 @@ export class DatingSettingsV1RPC
   public async placeholder(
     _req: datingSettingsv1.PlaceholderRequest
   ): Promise<datingSettingsv1.PlaceholderResponse> {
-    this.logger.log('Received placeholder request');
+    this.logger.log(`Received placeholder request at ${Date.now()}`);
 
     return {
       $typeName: 'datingsettings.v1.PlaceholderResponse' as const,
-      message: 'Hello from Dating Settings V1!',
+      message: `Hello from Dating Settings V1! ${new Date().toISOString()}`,
     };
   }
 }
