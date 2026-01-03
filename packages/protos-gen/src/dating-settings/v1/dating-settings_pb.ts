@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file dating-settings/v1/dating-settings.proto.
  */
 export const file_dating_settings_v1_dating_settings: GenFile = /*@__PURE__*/
-  fileDesc("CihkYXRpbmctc2V0dGluZ3MvdjEvZGF0aW5nLXNldHRpbmdzLnByb3RvEhFkYXRpbmdzZXR0aW5ncy52MSIUChJQbGFjZWhvbGRlclJlcXVlc3QiJgoTUGxhY2Vob2xkZXJSZXNwb25zZRIPCgdtZXNzYWdlGAEgASgJMnUKFURhdGluZ1NldHRpbmdzU2VydmljZRJcCgtQbGFjZWhvbGRlchIlLmRhdGluZ3NldHRpbmdzLnYxLlBsYWNlaG9sZGVyUmVxdWVzdBomLmRhdGluZ3NldHRpbmdzLnYxLlBsYWNlaG9sZGVyUmVzcG9uc2ViBnByb3RvMw");
+  fileDesc("CihkYXRpbmctc2V0dGluZ3MvdjEvZGF0aW5nLXNldHRpbmdzLnByb3RvEhFkYXRpbmdzZXR0aW5ncy52MSIUChJQbGFjZWhvbGRlclJlcXVlc3QiJgoTUGxhY2Vob2xkZXJSZXNwb25zZRIPCgdtZXNzYWdlGAEgASgJIisKGEdldERhdGluZ1NldHRpbmdzUmVxdWVzdBIPCgd1c2VyX2lkGAEgASgJIlAKGUdldERhdGluZ1NldHRpbmdzUmVzcG9uc2USMwoIc2V0dGluZ3MYASABKAsyIS5kYXRpbmdzZXR0aW5ncy52MS5EYXRpbmdTZXR0aW5ncyIrCg5EYXRpbmdTZXR0aW5ncxIZChFpc19vcGVuX3RvX2RhdGluZxgBIAEoCDLlAQoVRGF0aW5nU2V0dGluZ3NTZXJ2aWNlElwKC1BsYWNlaG9sZGVyEiUuZGF0aW5nc2V0dGluZ3MudjEuUGxhY2Vob2xkZXJSZXF1ZXN0GiYuZGF0aW5nc2V0dGluZ3MudjEuUGxhY2Vob2xkZXJSZXNwb25zZRJuChFHZXREYXRpbmdTZXR0aW5ncxIrLmRhdGluZ3NldHRpbmdzLnYxLkdldERhdGluZ1NldHRpbmdzUmVxdWVzdBosLmRhdGluZ3NldHRpbmdzLnYxLkdldERhdGluZ1NldHRpbmdzUmVzcG9uc2ViBnByb3RvMw");
 
 /**
  * Placeholder request message.
@@ -53,6 +53,73 @@ export const PlaceholderResponseSchema: GenMessage<PlaceholderResponse, {validTy
   messageDesc(file_dating_settings_v1_dating_settings, 1);
 
 /**
+ * @generated from message datingsettings.v1.GetDatingSettingsRequest
+ */
+export type GetDatingSettingsRequest = Message<"datingsettings.v1.GetDatingSettingsRequest"> & {
+  /**
+   * The user ID for whom to get the dating settings.
+   *
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+};
+
+export type GetDatingSettingsRequestValid = GetDatingSettingsRequest;
+
+/**
+ * Describes the message datingsettings.v1.GetDatingSettingsRequest.
+ * Use `create(GetDatingSettingsRequestSchema)` to create a new message.
+ */
+export const GetDatingSettingsRequestSchema: GenMessage<GetDatingSettingsRequest, {validType: GetDatingSettingsRequestValid}> = /*@__PURE__*/
+  messageDesc(file_dating_settings_v1_dating_settings, 2);
+
+/**
+ * Response message containing dating settings.
+ *
+ * @generated from message datingsettings.v1.GetDatingSettingsResponse
+ */
+export type GetDatingSettingsResponse = Message<"datingsettings.v1.GetDatingSettingsResponse"> & {
+  /**
+   * The dating settings for the user.
+   *
+   * @generated from field: datingsettings.v1.DatingSettings settings = 1;
+   */
+  settings?: DatingSettings;
+};
+
+export type GetDatingSettingsResponseValid = GetDatingSettingsResponse;
+
+/**
+ * Describes the message datingsettings.v1.GetDatingSettingsResponse.
+ * Use `create(GetDatingSettingsResponseSchema)` to create a new message.
+ */
+export const GetDatingSettingsResponseSchema: GenMessage<GetDatingSettingsResponse, {validType: GetDatingSettingsResponseValid}> = /*@__PURE__*/
+  messageDesc(file_dating_settings_v1_dating_settings, 3);
+
+/**
+ * Message representing dating settings.
+ *
+ * @generated from message datingsettings.v1.DatingSettings
+ */
+export type DatingSettings = Message<"datingsettings.v1.DatingSettings"> & {
+  /**
+   * Whether the user is open to dating.
+   *
+   * @generated from field: bool is_open_to_dating = 1;
+   */
+  isOpenToDating: boolean;
+};
+
+export type DatingSettingsValid = DatingSettings;
+
+/**
+ * Describes the message datingsettings.v1.DatingSettings.
+ * Use `create(DatingSettingsSchema)` to create a new message.
+ */
+export const DatingSettingsSchema: GenMessage<DatingSettings, {validType: DatingSettingsValid}> = /*@__PURE__*/
+  messageDesc(file_dating_settings_v1_dating_settings, 4);
+
+/**
  * @generated from service datingsettings.v1.DatingSettingsService
  */
 export const DatingSettingsService: GenService<{
@@ -65,6 +132,16 @@ export const DatingSettingsService: GenService<{
     methodKind: "unary";
     input: typeof PlaceholderRequestSchema;
     output: typeof PlaceholderResponseSchema;
+  },
+  /**
+   * RPC method to get dating settings.
+   *
+   * @generated from rpc datingsettings.v1.DatingSettingsService.GetDatingSettings
+   */
+  getDatingSettings: {
+    methodKind: "unary";
+    input: typeof GetDatingSettingsRequestSchema;
+    output: typeof GetDatingSettingsResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_dating_settings_v1_dating_settings, 0);

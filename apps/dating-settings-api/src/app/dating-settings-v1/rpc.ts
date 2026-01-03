@@ -9,7 +9,7 @@ export class DatingSettingsV1RPC
 {
   private readonly logger = new Logger(DatingSettingsV1RPC.name);
 
-  // @ts-expect-error: Implement your RPC methods here
+  // @ts-expect-error: Placeholder Request
   public async placeholder(
     _req: datingSettingsv1.PlaceholderRequest
   ): Promise<datingSettingsv1.PlaceholderResponse> {
@@ -18,6 +18,24 @@ export class DatingSettingsV1RPC
     return {
       $typeName: 'datingsettings.v1.PlaceholderResponse' as const,
       message: `Hello from Dating Settings V1! ${new Date().toISOString()}`,
+    };
+  }
+
+  // @ts-expect-error: GetDatingSettings Request
+  public async getDatingSettings(
+    req: datingSettingsv1.GetDatingSettingsRequest
+  ): Promise<datingSettingsv1.GetDatingSettingsResponse> {
+    this.logger.log(
+      `Received getDatingSettings request for userId: ${req.userId}`
+    );
+
+    // Placeholder implementation
+    return {
+      $typeName: 'datingsettings.v1.GetDatingSettingsResponse',
+      settings: {
+        $typeName: 'datingsettings.v1.DatingSettings',
+        isOpenToDating: true,
+      },
     };
   }
 }

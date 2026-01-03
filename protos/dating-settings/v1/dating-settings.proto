@@ -5,6 +5,9 @@ package datingsettings.v1;
 service DatingSettingsService {
   // Placeholder RPC method that does not perform any real operation.
   rpc Placeholder (PlaceholderRequest) returns (PlaceholderResponse);
+
+  // RPC method to get dating settings.
+  rpc GetDatingSettings (GetDatingSettingsRequest) returns (GetDatingSettingsResponse);
 }
 
 // Placeholder request message.
@@ -14,4 +17,21 @@ message PlaceholderRequest {}
 message PlaceholderResponse {
   // A simple message field.
   string message = 1;
+}
+
+message GetDatingSettingsRequest {
+  // The user ID for whom to get the dating settings.
+  string user_id = 1;
+}
+
+// Response message containing dating settings.
+message GetDatingSettingsResponse {
+  // The dating settings for the user.
+  DatingSettings settings = 1;
+}
+
+// Message representing dating settings.
+message DatingSettings {
+  // Whether the user is open to dating.
+  bool is_open_to_dating = 1;
 }

@@ -36,7 +36,11 @@ export class AuthV1RPCService
     this.logger.log('Login request received', req);
 
     // Call the dating settings service
-    await this.datingSettingsClient.placeholder({});
+    const response = await this.datingSettingsClient.getDatingSettings({
+      userId: req.username,
+    });
+
+    console.log(response);
 
     return {
       $typeName: 'auth.v1.LoginResponse',
