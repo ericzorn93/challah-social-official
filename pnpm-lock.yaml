@@ -8,6 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@bufbuild/buf':
+        specifier: ^1.61.0
+        version: 1.61.0
+      '@bufbuild/protobuf':
+        specifier: ^2.10.2
+        version: 2.10.2
+      '@bufbuild/protoc-gen-es':
+        specifier: ^2.10.2
+        version: 2.10.2(@bufbuild/protobuf@2.10.2)
+      '@connectrpc/connect':
+        specifier: ^2.1.1
+        version: 2.1.1(@bufbuild/protobuf@2.10.2)
+      '@connectrpc/validate':
+        specifier: ^0.2.0
+        version: 0.2.0(@bufbuild/protobuf@2.10.2)(@bufbuild/protovalidate@1.1.0(@bufbuild/protobuf@2.10.2))(@connectrpc/connect@2.1.1(@bufbuild/protobuf@2.10.2))
       '@nestjs/common':
         specifier: ^11.0.0
         version: 11.1.10(reflect-metadata@0.1.14)(rxjs@7.8.2)
@@ -27,21 +42,6 @@ importers:
         specifier: ^7.8.0
         version: 7.8.2
     devDependencies:
-      '@bufbuild/buf':
-        specifier: ^1.61.0
-        version: 1.61.0
-      '@bufbuild/protobuf':
-        specifier: ^2.10.2
-        version: 2.10.2
-      '@bufbuild/protoc-gen-es':
-        specifier: ^2.10.2
-        version: 2.10.2(@bufbuild/protobuf@2.10.2)
-      '@connectrpc/connect':
-        specifier: ^2.1.1
-        version: 2.1.1(@bufbuild/protobuf@2.10.2)
-      '@connectrpc/validate':
-        specifier: ^0.2.0
-        version: 0.2.0(@bufbuild/protobuf@2.10.2)(@bufbuild/protovalidate@1.1.0(@bufbuild/protobuf@2.10.2))(@connectrpc/connect@2.1.1(@bufbuild/protobuf@2.10.2))
       '@eslint/js':
         specifier: ^9.8.0
         version: 9.39.2
