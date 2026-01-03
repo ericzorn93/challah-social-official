@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package auth.v1;
+
+import "buf/validate/validate.proto";
+
+service AuthService {
+  // Login allows a user to authenticate with their username and password.
+  rpc Login(LoginRequest) returns (LoginResponse) {}
+
+  // Logout allows a user to terminate their session.
+  rpc Logout(LogoutRequest) returns (LogoutResponse) {}
+}
+
+
+// Request message for user login.
+message LoginRequest {
+  // The username of the user
+  string username = 1 [(buf.validate.field).string = {min_len: 2, max_len: 50}];
+
+  // The password of the user
+  string password = 2 [(buf.validate.field).string = {min_len: 8}];
+}
+
+// Response message for user login.
+message LoginResponse {
+  // The access token issued upon successful login
+  string access_token = 1 [(buf.validate.field).string = {min_len: 5}];
+}
+
+// Request message for user logout.
+message LogoutRequest {}
+
+// Response message for user logout.
+message LogoutResponse {}
