@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "protos:gen": "buf generate"
+    "protos:gen": "buf generate",
+    "nx:reset": "nx reset"
   },
   "private": true,
   "devDependencies": {
