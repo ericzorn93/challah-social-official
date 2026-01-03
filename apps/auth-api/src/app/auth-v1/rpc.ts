@@ -23,10 +23,13 @@ export class AuthV1RPCService
       httpVersion: '1.1',
       baseUrl: datingServiceURL,
     });
-    this.datingSettingsClient = createClient(
+
+    const client = createClient(
       datingSettingsv1.DatingSettingsService,
       transport
     );
+
+    this.datingSettingsClient = client;
 
     this.logger.log('DatingSettingsClient initialized');
   }
@@ -40,7 +43,7 @@ export class AuthV1RPCService
       userId: req.username,
     });
 
-    console.log(response);
+    this.logger.log('Received dating settings response', response);
 
     return {
       $typeName: 'auth.v1.LoginResponse',
