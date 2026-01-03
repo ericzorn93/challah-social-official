@@ -5,18 +5,14 @@ import { createValidateInterceptor } from '@connectrpc/validate';
 
 import routerHandler from './routeHandler';
 import { AppModule } from './app/app.module';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const configService = app.get(ConfigService);
 
-  const isProd = process.env.NODE_ENV === 'production';
-  const port = 3000;
-  let hostname = '0.0.0.0';
-
-  if (isProd) {
-    app.enableShutdownHooks();
-    hostname = 'fly-local-6pn';
-  }
+  const port = configService.getOrThrow<string>('PORT');
+  const hostname = configService.getOrThrow<string>('HOSTNAME');
 
   // Register Connect middleware
   app.use(
