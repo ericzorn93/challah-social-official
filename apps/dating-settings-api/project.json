@@ -46,7 +46,7 @@
       "executor": "nx:noop"
     },
     "serve": {
-      "continuous": true,
+      "continuous": false,
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "dependsOn": ["build"],
