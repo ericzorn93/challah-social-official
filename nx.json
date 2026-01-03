@@ -52,7 +52,7 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/dating-settings-api-e2e/**/*"]
+      "exclude": ["apps/dating-settings-api-e2e/**/*", "apps/auth-api-e2e/**/*"]
     },
     {
       "plugin": "@nx/js/typescript",

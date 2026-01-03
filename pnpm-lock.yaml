@@ -70,8 +70,8 @@ importers:
         specifier: 22.3.3
         version: 22.3.3(@babel/traverse@7.28.5)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18))(@types/node@20.19.9)(@zkochan/js-yaml@0.0.7)(babel-plugin-macros@3.1.0)(eslint@9.39.2)(nx@22.3.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18)))(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.18))(@types/node@20.19.9)(typescript@5.9.3))(typescript@5.9.3)
       '@nx/web':
-        specifier: 22.3.1
-        version: 22.3.1(@babel/traverse@7.28.5)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18))(nx@22.3.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18)))
+        specifier: 22.3.3
+        version: 22.3.3(@babel/traverse@7.28.5)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18))(nx@22.3.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18)))
       '@nx/webpack':
         specifier: 22.3.3
         version: 22.3.3(@babel/traverse@7.28.5)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18))(nx@22.3.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18)))(typescript@5.9.3)(webpack-cli@5.1.4)
@@ -135,6 +135,51 @@ importers:
       webpack-cli:
         specifier: ^5.1.4
         version: 5.1.4(webpack@5.104.1)
+
+  apps/auth-api:
+    dependencies:
+      '@challah-social/nest-utils':
+        specifier: workspace:*
+        version: link:../../packages/nest-utils
+      '@challah-social/protos-gen':
+        specifier: workspace:*
+        version: link:../../packages/protos-gen
+      '@connectrpc/connect':
+        specifier: ^2.1.1
+        version: 2.1.1(@bufbuild/protobuf@2.10.2)
+      '@connectrpc/connect-express':
+        specifier: ^2.1.1
+        version: 2.1.1(@bufbuild/protobuf@2.10.2)(@connectrpc/connect-node@2.1.1(@bufbuild/protobuf@2.10.2)(@connectrpc/connect@2.1.1(@bufbuild/protobuf@2.10.2)))(@connectrpc/connect@2.1.1(@bufbuild/protobuf@2.10.2))(express@5.2.1)
+      '@connectrpc/validate':
+        specifier: ^0.2.0
+        version: 0.2.0(@bufbuild/protobuf@2.10.2)(@bufbuild/protovalidate@1.1.0(@bufbuild/protobuf@2.10.2))(@connectrpc/connect@2.1.1(@bufbuild/protobuf@2.10.2))
+      '@nestjs/common':
+        specifier: ^11.0.0
+        version: 11.1.10(reflect-metadata@0.1.14)(rxjs@7.8.2)
+      '@nestjs/config':
+        specifier: ^4.0.2
+        version: 4.0.2(@nestjs/common@11.1.10(reflect-metadata@0.1.14)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@nestjs/core':
+        specifier: ^11.0.0
+        version: 11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/platform-express@11.1.10)(reflect-metadata@0.1.14)(rxjs@7.8.2)
+      '@nestjs/platform-express':
+        specifier: ^11.0.0
+        version: 11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/core@11.1.10)
+      reflect-metadata:
+        specifier: ^0.1.13
+        version: 0.1.14
+      rxjs:
+        specifier: ^7.8.0
+        version: 7.8.2
+      tslib:
+        specifier: ^2.3.0
+        version: 2.8.1
+    devDependencies:
+      '@nestjs/testing':
+        specifier: ^11.0.0
+        version: 11.1.10(@nestjs/common@11.1.10(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/core@11.1.10)(@nestjs/platform-express@11.1.10)
+
+  apps/auth-api-e2e: {}
 
   apps/dating-settings-api:
     dependencies:
@@ -1578,8 +1623,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@nx/web@22.3.1':
-    resolution: {integrity: sha512-UoqGbNtyh47fmJDuvMwcneeRzfLyZVFdbALWgJIMm1jCl6RktRCeJ0fyT9JgjwKplFmRXpdpgoTIVnVoSVFaIg==}
+  '@nx/web@22.3.3':
+    resolution: {integrity: sha512-0iuAxXCljxCAfQ5N4SffMuf0CuUFGJoO5nzOTqnZ60pRy+JIWZ+DXfh7bfHxTEcE3JQ6nT/hbZVLPMVNleoy7Q==}
 
   '@nx/webpack@22.3.3':
     resolution: {integrity: sha512-Ga8KuMoTl7fVvOEMPk+l/+C//IHwbLeCyhBx4+9xsB6o+TqvB/P7M5S70VRB+BIpf9JRgO7KU6ZfabAUkDMqTA==}
@@ -5511,6 +5556,7 @@ packages:
   whatwg-encoding@2.0.0:
     resolution: {integrity: sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==}
     engines: {node: '>=12'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
@@ -7379,10 +7425,10 @@ snapshots:
   '@nx/nx-win32-x64-msvc@22.3.3':
     optional: true
 
-  '@nx/web@22.3.1(@babel/traverse@7.28.5)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18))(nx@22.3.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18)))':
+  '@nx/web@22.3.3(@babel/traverse@7.28.5)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18))(nx@22.3.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18)))':
     dependencies:
-      '@nx/devkit': 22.3.1(nx@22.3.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18)))
-      '@nx/js': 22.3.1(@babel/traverse@7.28.5)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18))(nx@22.3.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18)))
+      '@nx/devkit': 22.3.3(nx@22.3.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18)))
+      '@nx/js': 22.3.3(@babel/traverse@7.28.5)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18))(nx@22.3.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.18))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.5.29(@swc/helpers@0.5.18)))
       detect-port: 1.6.1
       http-server: 14.1.1
       picocolors: 1.1.1

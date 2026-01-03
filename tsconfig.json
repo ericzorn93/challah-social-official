@@ -14,6 +14,12 @@
     },
     {
       "path": "./apps/dating-settings-api"
+    },
+    {
+      "path": "./apps/auth-api-e2e"
+    },
+    {
+      "path": "./apps/auth-api"
     }
   ]
 }
