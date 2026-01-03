@@ -32,8 +32,11 @@ export class AuthV1RPCService
   }
 
   // @ts-expect-error: Login Request
-  public async login(_req: authv1.LoginRequest): Promise<authv1.LoginResponse> {
-    this.logger.log('Login request received');
+  public async login(req: authv1.LoginRequest): Promise<authv1.LoginResponse> {
+    this.logger.log('Login request received', req);
+
+    // Call the dating settings service
+    await this.datingSettingsClient.placeholder({});
 
     return {
       $typeName: 'auth.v1.LoginResponse',
@@ -43,11 +46,11 @@ export class AuthV1RPCService
 
   // @ts-expect-error: Logout Request
   public async logout(
-    _req: authv1.LogoutRequest
+    req: authv1.LogoutRequest
   ): Promise<authv1.LogoutResponse> {
-    this.logger.log('Logout request received');
+    this.logger.log('Logout request received', req);
 
-    //
+    // Call the dating settings service
     await this.datingSettingsClient.placeholder({});
 
     return {

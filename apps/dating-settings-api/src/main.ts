@@ -23,7 +23,9 @@ async function bootstrap() {
   );
 
   await app.listen(port, hostname);
-  Logger.log(`🚀 Application is running on: http://${hostname}:${port}`);
+  Logger.log(
+    `🚀 Dating Settings API is running on: http://${hostname}:${port}`
+  );
 }
 
 bootstrap();
