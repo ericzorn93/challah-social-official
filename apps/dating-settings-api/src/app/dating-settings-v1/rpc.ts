@@ -1,4 +1,4 @@
-import { ServiceImpl } from '@connectrpc/connect';
+import { HandlerContext, ServiceImpl } from '@connectrpc/connect';
 import { Injectable, Logger } from '@nestjs/common';
 
 import { datingSettingsv1 } from '@challah-social/protos-gen';
@@ -11,7 +11,8 @@ export class DatingSettingsV1RPC
 
   // @ts-expect-error: Placeholder Request
   public async placeholder(
-    _req: datingSettingsv1.PlaceholderRequest
+    _req: datingSettingsv1.PlaceholderRequest,
+    _ctx: HandlerContext
   ): Promise<datingSettingsv1.PlaceholderResponse> {
     this.logger.log(`Received placeholder request at ${Date.now()}`);
 
@@ -23,7 +24,8 @@ export class DatingSettingsV1RPC
 
   // @ts-expect-error: GetDatingSettings Request
   public async getDatingSettings(
-    req: datingSettingsv1.GetDatingSettingsRequest
+    req: datingSettingsv1.GetDatingSettingsRequest,
+    _ctx: HandlerContext
   ): Promise<datingSettingsv1.GetDatingSettingsResponse> {
     this.logger.log(
       `Received getDatingSettings request for userId: ${req.userId}`

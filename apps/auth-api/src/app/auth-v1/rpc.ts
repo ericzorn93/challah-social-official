@@ -1,6 +1,11 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { Client, createClient, ServiceImpl } from '@connectrpc/connect';
+import {
+  Client,
+  createClient,
+  ServiceImpl,
+  HandlerContext,
+} from '@connectrpc/connect';
 import { createConnectTransport } from '@connectrpc/connect-node';
 
 import { authv1, datingSettingsv1 } from '@challah-social/protos-gen';
@@ -35,7 +40,10 @@ export class AuthV1RPCService
   }
 
   // @ts-expect-error: Login Request
-  public async login(req: authv1.LoginRequest): Promise<authv1.LoginResponse> {
+  public async login(
+    req: authv1.LoginRequest,
+    _ctx: HandlerContext
+  ): Promise<authv1.LoginResponse> {
     this.logger.log('Login request received', req);
 
     // Call the dating settings service
@@ -53,7 +61,8 @@ export class AuthV1RPCService
 
   // @ts-expect-error: Logout Request
   public async logout(
-    req: authv1.LogoutRequest
+    req: authv1.LogoutRequest,
+    _ctx: HandlerContext
   ): Promise<authv1.LogoutResponse> {
     this.logger.log('Logout request received', req);
 
