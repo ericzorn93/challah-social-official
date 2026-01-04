@@ -47,11 +47,13 @@ export class AuthV1RPCService
     this.logger.log('Login request received', req);
 
     // Call the dating settings service
-    const response = await this.datingSettingsClient.getDatingSettings({
-      userId: req.username,
-    });
+    // @ts-expect-error: GetDatingSettings Request
+    const response: datingSettingsv1.GetDatingSettingsResponse =
+      await this.datingSettingsClient.getDatingSettings({
+        userId: req.username,
+      });
 
-    this.logger.log('Received dating settings response', response);
+    this.logger.log('Received dating settings response', response.settings);
 
     return {
       $typeName: 'auth.v1.LoginResponse',
